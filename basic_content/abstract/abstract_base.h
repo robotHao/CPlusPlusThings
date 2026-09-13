@@ -11,11 +11,12 @@
 /**
  * @brief 抽象类
  */
-class AbstractBase {
-  // Data members of class
+class AbstractBase
+{
+    // Data members of class
 public:
-  // Pure Virtual Function
-  virtual void show() = 0;
+    // Pure Virtual Function
+    virtual void show() = 0;
 
-  /* Other members */
+    /* Other members */
 };

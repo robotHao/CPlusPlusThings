@@ -19,6 +19,7 @@ public:
     void g() //类A中普通的成员函数
     {
         /// 在普通成员函数g内部调用纯虚函数this->f(),运行时调用子类重写的f，模板方法模式
+        cout << "A::g()" << endl;
         this->f();
     }
 
@@ -63,7 +64,7 @@ public:
 
 class C : public A
 {
-    // 没有override 父类中函数 void f()
+    // 没有override(重写) 父类中函数 void f()
 public:
     int m_classCVar{0};
 
@@ -84,8 +85,8 @@ public:
 
 int main()
 {
-    B b(10, 20);
-    b.g();
+    B b(10, 20);//先执行类A，再执行类B，且所谓构造函数就是构造类的对象，对象就是依据类的构造函数所创建的，系统会自动执行
+    b.g(); //先调用类A中的成员函数，再调用子类对应的函数实现
     C c(30);
     c.g();
 
